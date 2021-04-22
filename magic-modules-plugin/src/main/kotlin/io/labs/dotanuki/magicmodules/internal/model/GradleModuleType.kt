@@ -11,7 +11,7 @@ internal enum class GradleModuleType {
 
     fun conventionFileName() = when (this) {
         APPLICATION -> "ApplicationModules"
-        JAVA_LIBRARY -> "JavaModules"
+        JAVA_LIBRARY -> "Modules"
         LIBRARY -> "LibraryModules"
         else -> throw MagicModulesError.ImpossibleOutputAssociation
     }
