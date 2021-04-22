@@ -22,8 +22,7 @@ internal object ModuleNamesWriter {
     ) {
         when {
             folder.isFile -> throw MagicModulesError.CantWriteConstantsFile
-            coordinates.isEmpty() ->
-                if (moduleType != GradleModuleType.JAVA_LIBRARY) throw MagicModulesError.CantAcceptModulesNames
+            coordinates.isEmpty() -> return
             else -> generateAndWriteKotlinCode(moduleType.conventionFileName(), coordinates, folder)
         }
     }
